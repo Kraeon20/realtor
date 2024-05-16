@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ampofo Realtor</title>
+    <link rel="icon" href="../static/images/jamal_tours.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+    
+    <header>
+        <a href="#" class="logo">AMP<span>OFO</span></a>
+
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#tours">Properties</a></li>
+            <li><a href="#footer">Contact</a></li>
+        </ul>
+
+        <div class="h-right">
+            <a href="#">Follow Us</a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="https://wa.me/233553829644" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-fill"></i></a>
+            <li><a href="tel:+233553829644"><i class="ri-phone-fill"></i></a></li>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+
+
+    <section class="home">
+        <div class="home-text">
+            <h5>Find</h5>
+            <h1>Properties on Sale</h1>
+            <h2>in Ghana</h2>
+            <p>Explore and Reserve Unforgettable Experiences in Accra. <br> Discover the perfect outing tailored to your preferences guided by our experienced team. <br>Enjoy the company of knowledgeable English-speaking tour guides throughout your adventure.</p>
+
+            <a href="#" class="btn" id="bookTripBtn">Buy a Property</a>
+        </div>
+
+
+        <div id="formContainer" class="form-container">
+            <form action="{{ url_for('book_trip') }}" method="post" class="form">
+                <div class="form-row">
+                    <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+    
+                <div class="form-row date-row">
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" name="startDate" placeholder="Start Date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">End Date</label>
+                        <input type="date" id="endDate" name="endDate" placeholder="End Date" required>
+                    </div>
+                </div>
+                
+                <div class="form-row time-row">
+                    <div class="form-group">
+                        <label for="startTime">Start Time:</label>
+                        <input type="time" id="startTime" name="startTime" placeholder="Start Time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime">End Time:</label>
+                        <input type="time" id="endTime" name="endTime" placeholder="End Time" required>
+                    </div>
+                </div>
+                <textarea id="message" name="message" rows="4" cols="50" placeholder="Message" required></textarea>
+    
+    
+                <button type="submit">Confirm</button>
+            </form>
+
+            {% if success %}
+            <div class="success-popup">Email sent successfully!</div>
+            {% else %}
+            <div class="error-popup">Error sending email. Please try again.</div>
+            {% endif %}
+        </div>
+    </section>
+
+
+    <section class="holiday">
+        <div class="holiday-img">
+            <img src="../static/images/building1.jpg" alt="Background Image">
+        </div>
+    
+        <div class="holiday-text">
+            <h5>Discover the Charm of Accra</h5>
+            <h2>Your Gateway to Real Estate Success in Ghana!</h2>
+            <p>Accra, the bustling capital city of Ghana, is where your real estate dreams come to life. As a trusted realtor family business, we are your guides to finding the perfect property in this vibrant metropolis.</p>
+            <p>From luxurious apartments overlooking the Atlantic Ocean to cozy family homes nestled in serene neighborhoods, we specialize in matching our clients with their ideal properties. Our expertise extends beyond just buying and selling - we're here to ensure your entire real estate journey is smooth and stress-free.</p>
+            <p><span class="green-text">With us, you'll have access to a wide range of properties, personalized service, and expert advice every step of the way.</span></p>
+        </div>
+    </section>
+
+    <section id="tours" class="tour">
+        <div class="tour-heading">
+            <h2>Properties</h2>
+        </div>
+    
+        <div class="tour-content">
+            <div class="tour-item">
+                <img src="../static/images/bulid.jpg" alt="Tour Image 1">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+    
+            <div class="tour-item">
+                <img src="../static/images/building3.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building4.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+    
+            <div class="tour-item">
+                <img src="../static/images/building5.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building6.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+    
+            <div class="tour-item">
+                <img src="../static/images/building7.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building8.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+    
+            <div class="tour-item">
+                <img src="../static/images/building9.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building21.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building22.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building23.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building24.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building25.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building26.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+
+            <div class="tour-item">
+                <img src="../static/images/building14.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building20.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag">Available</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building15.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag waitlist">Waitlist</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building16.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag waitlist">Waitlist</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building17.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag waitlist">Waitlist</div>
+            </div>
+
+            <!-- more -->
+
+            <div class="tour-item">
+                <img src="../static/images/building19.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag waitlist">Waitlist</div>
+            </div>
+
+            <!-- more -->
+            <div class="tour-item">
+                <img src="../static/images/building11.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag waitlist">Waitlist</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building10.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="availability-tag waitlist">Waitlist</div>
+            </div>
+
+            <div class="tour-item">
+                <img src="../static/images/building12.jpg" alt="Tour Image 2">
+                <div class="tour-description">
+                    <h3>4 Bedroom Building</h3>
+                    <p>East Legon, Accra</p>
+                </div>
+                <div class="construction-tag">Under Construction</div>
+            </div>
+        </div>
+
+        
+    </section>
+
+
+
+    
+
+    <section>
+        <div class="tour-heading">
+            <h2>Book A Consultation</h2>
+        </div>
+        <div id="EndformContainer" class="end-form-container">
+            <form action="{{ url_for('book_trip') }}" method="post" class="form">
+                <div class="form-row">
+                    <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+    
+                <div class="form-row date-row">
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" name="startDate" placeholder="Start Date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">End Date</label>
+                        <input type="date" id="endDate" name="endDate" placeholder="End Date" required>
+                    </div>
+                </div>
+                
+                <div class="form-row time-row">
+                    <div class="form-group">
+                        <label for="startTime">Start Time:</label>
+                        <input type="time" id="startTime" name="startTime" placeholder="Start Time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime">End Time:</label>
+                        <input type="time" id="endTime" name="endTime" placeholder="End Time" required>
+                    </div>
+                </div>
+                <textarea id="message" name="message" rows="4" cols="50" placeholder="Message" required></textarea>
+    
+                <button type="submit">Confirm</button>
+            </form>
+    </section>
+
+    
+    <section id="footer" class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">AMPOFO<span> Realtor</span></div>
+            
+            <div class="footer-social">
+                <a href="#"><i class="ri-instagram-fill"></i></a>
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="https://wa.me/233553829644" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-fill"></i></a>
+                <li><a href="tel:+233553829644"><i class="ri-phone-fill"></i></a></li>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ampofo and Sons Realtor. All rights reserved. <br>Website by son: by Shadrach Ampofo</p>
+        </div>
+    </section>
+    
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
